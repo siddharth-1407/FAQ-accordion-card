@@ -1,0 +1,194 @@
+:root{
+    --text-blue:  hsl(238, 29%, 16%);
+    --text-red: hsl(14, 88%, 65%);
+    --text-dkblue: hsl(240, 6%, 50%);
+    --text-xdkblue: hsl(237, 12%, 33%);
+    --gradient-voilet: hsl(273, 75%, 66%); 
+    --gradient-blue: hsl(240, 73%, 65%);
+    --divider-blue: hsl(240, 5%, 91%);
+}
+html{
+    box-sizing: border-box;
+    font-size: 100% ;
+}
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 9em 1.5em;
+    font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--gradient-voilet), var(--gradient-blue));
+    position: relative;
+}
+main{
+    margin: auto;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    /* max-width: 56rem; */
+    max-width: 60rem;
+    background-image: url('./images/bg-pattern-mobile.svg');   
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 70%;
+
+}
+.card_box{
+    display: none;
+}
+.card_image{
+    position: relative; 
+}
+.card_image-desktop{
+    display: none;
+}
+.card_image .card_image-mobile{
+    position: absolute;
+    top: -6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    /* margin: -1rem auto; */
+    width: 100%;
+    height: auto;
+    max-width: 14rem;
+}
+.card_content{
+    padding: 8rem 1.5rem 3rem 1.5rem;
+}
+h1{
+    color: var(--text-blue);
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+.accordions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+button {
+    font-family: 'Kumbh Sans', sans-serif;
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: 1em 0;
+        background-color: #fff;
+        font-size: 0.85rem;
+        color: var(--text-xdkblue);
+}
+hr{
+    border: 0;
+    height: 0;
+    /* border-top: 1px solid var(--divider-blue); */
+    border-bottom: 1px solid var(--divider-blue);
+}
+.pannel{
+    display: none;
+    font-size: 0.75rem;
+    color: var(--text-dkblue);
+    padding: 0 1.2em 1.2em 0;
+    line-height: 1.5;
+
+}
+.active{
+    font-weight: 700;
+}
+.arrow{
+    transition: 0.25s;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+
+}
+
+
+@media (min-width: 62.5em) {
+    main{
+        display: flex;
+        border-radius: 2rem;
+        margin: 6rem auto;
+        background-image: url('./images/bg-pattern-desktop.svg');   
+        background-size: 54rem 60rem;
+        background-position: -471% 60% ;
+        position: relative;
+        
+        /* background-size: 48rem 53rem; */
+        /* background-size: 25rem; */
+        /* background-position: -490% 61% ; */
+        /* background-position: -13% center; */
+    }
+    .card_box{
+        display: block;
+        position: absolute;
+        /* top: 57%; */
+        top: 61%;
+        left: 0; 
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1;
+    }
+    .card_image{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .card_image-desktop{
+        display: block;
+    }
+
+
+    .card_image .card_image-mobile{
+        display: none;
+    }
+    .card_image .card_image-desktop{
+        position: static;
+        display: block;
+        transform: translateX(-5.5rem);
+        width: 100%;
+        /* max-width: 27rem; */
+        margin: 0;
+    }
+    
+    .card_content,.card_image{
+        flex: 1;
+    }
+    .card_content{
+        padding: 4em 6em 4em 0;
+        max-width: 29.375rem;
+    }
+    h1{
+        text-align: left;
+    }
+    
+    .pannel{
+        /* padding: 0 1.2em 1.2em 0; */
+        font-size: 0.85rem;
+        overflow: hidden;
+    }
+    /* h2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } */
+    
+    .accordions button{
+        font-size: 1rem;
+        /* font-family: 'Kumbh Sans', sans-serif;
+        border: none;
+        width: 100%;
+        text-align: left; */
+        /* padding: 1em 0; */
+        /* background-color: #fff; */
+        /* color: var(--text-xdkblue); */
+    }
+    
+    
+    
+}
